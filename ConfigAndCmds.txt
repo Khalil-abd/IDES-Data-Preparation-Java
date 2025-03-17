@@ -1,135 +1,24 @@
-senderPrivateKSType=jks
-senderPublicKSType=jks
-receiverPrivateKSType=jks
-receiverPublicKSType=jks
-approverPrivateKSType=jks
-approverPublicKSType=jks
+senderPrivateKSType=pkcs12
 
-senderPrivateKSFile=Keystore/Canada_PrepTool/KSprivateCA.jks
-senderPublicKSFile=Keystore/Canada_PrepTool/KSpublicCA.jks
-receiverPrivateKSFile=Keystore/IRS_PrepTool/KSprivateUS.jks
-receiverPublicKSFile=Keystore/IRS_PrepTool/KSpublicUS.jks
-approverPrivateKSFile=Keystore/Mexico_PrepTool/KSprivateMX.jks
-approverPublicKSFile=Keystore/Mexico_PrepTool/KSpublicMX.jks
+senderPrivateKSFile=input/certif202422.p12
+senderPrivateKSPwd=Password2024%
+senderPrivateKeyAlias=tp-4997da4b-b8da-42af-b0b2-8fef0cd3d932
+senderPrivateKeyPwd=Password2024%
 
-senderPrivateKSPwd=pwd123
-senderPublicKSPwd=pwd123
-receiverPrivateKSPwd=pwd123
-receiverPublicKSPwd=pwd123
-approverPrivateKSPwd=pwd123
-approverPublicKSPwd=pwd123
+senderPublicKSType=pkcs12
+senderPublicKSFile=input/certif202422.p12
+senderPublicKSPwd=Password2024%
 
-senderPrivateKeyPwd=CAN2014
-receiverPrivateKeyPwd=password
-approverPrivateKeyPwd=MEX2014
+receiverPublicCertName=input/encryption-service_services_irs_gov.crt
 
-senderPrivateKeyAlias=CANADAcert
-senderPublicKeyAlias=CANADAcert
-receiverPrivateKeyAlias=IRScert
-receiverPublicKeyAlias=IRScert
-approverPrivateKeyAlias=MEXICOcert
-approverPublicKeyAlias=MEXICOcert
-
-senderGiin=000000.00000.TA.124
+senderGiin=ZAYJZP.00186.ME.504
 receiverGiin=000000.00000.TA.840
-approverGiin=000000.00000.TA.484
-taxYear=2017
 
-//senderPublicCertName=Certs/000000.00000.TA.124.crt
-//approverPublicCertName=Certs/000000.00000.TA.484.crt
-//receiverPublicCertName=Certs/000000.00000.TA.840.crt
+taxYear=2024
 
 verifyAllSignature=true
-
-//keepSignedXmlAfterSignAndCreatePkgFlag=true
-
-//comment line
-
-/* 
-block comment lines
-*/
-//output from a command is default input to next command
-
-//sigXmlTransform=Inclusive|Exclusive 
+setMetadataInfo email=wafa.rahmani@allianz.com fileRevisionId=true origTransId=origTransId0
 sigXmlTransform=Inclusive
+signAndCreatePkg input=input/ZAYJZP.00186.ME.504_PAYLOAD.xml
 
-//usage: signXml input=<xml> output=An<signed xml> sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-signXml input=Sample.000000.00000.TA.124_Payload.xml output=AnOutput.000000.00000.TA.124_Payload.signed.xml sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-sigXmlTransform=Exclusive
-signXml input=Sample.000000.00000.TA.124_Payload.xml output=AnOutput.000000.00000.TA.124_Payload.signed.xml sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-
-//usage: wrapTextInXmlAndSign input=<txt> output=An<signed xml> sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-wrapTextInXmlAndSign input=Sample.txt output=AnOutput.txt.signed.xml sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-
-//usage: wrapBinaryInXmlAndSign input=<txt> output=An<signed xml> sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-wrapBinaryInXmlAndSign input=Sample.pdf output=AnOutput.pdf.signed.xml sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-
-//for large file use 'Streaming' based cmds
-
-sigXmlTransform=Inclusive 
-//usage: signXmlStreaming input=<xml> output=An<signed xml> sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-signXmlStreaming input=Sample.000000.00000.TA.124_Payload.xml output=AnOutput.000000.00000.TA.124_Payload.signed.xml sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-sigXmlTransform=Exclusive
-signXmlStreaming input=Sample.000000.00000.TA.124_Payload.xml output=AnOutput.000000.00000.TA.124_Payload.signed.xml sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-
-//usage: wrapTextInXmlAndSignStreaming input=<txt> output=<signed xml> sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-wrapTextInXmlAndSignStreaming input=Sample.txt output=AnOutput.txt.signed.xml sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-
-//usage: wrapBinaryInXmlAndSignStreaming input=<txt> output=<signed xml> sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-wrapBinaryInXmlAndSignStreaming input=Sample.pdf output=AnOutput.pdf.signed.xml sigKey=senderPrivateKey sigPublicCert=senderPublicCert
-
-//usage:  [input=<signed xml>] [sigPublicCert=senderPublicCert]
-verifySignature input=Sample.000000.00000.TA.124_Payload.signed.xml sigPublicCert=senderPublicCert
-
-//verifySignature - for large file use 'Streaming' based cmds
-//usage: verifySignatureStreaming [input=<signed xml>] [sigPublicCert=senderPublicCert]
-verifySignatureStreaming input=Sample.000000.00000.TA.124_Payload.signed.xml sigPublicCert=senderPublicCert
-
-//usage: createBinaryFromSignedBase64Binary [input=<signed xml base64 encoded binary>] output=<binary output>
-createBinaryFromSignedBase64Binary input=AnOutput.pdf.signed.xml output=AnOutput.pdf
-
-//for all packaging commands
-
-//setMetadata email, fileRevisionId and origTransId
-//usage: setMetadataInfo email=<email> [fileRevisionId=true|false] [origTransId=<origTransId>]
-setMetadataInfo email=abc@xyz.com fileRevisionId=true origTransId=origTransId0
-
-//usage: createPkgWithApprover [input=<signed xml>] [fileFormatCd=XML|TXT|PDF|JPG|RTF - default XML] [binaryEncodingSchemeCd=NONE|BASE64 - default NONE] [fatcaEntCommCd=NTF|RPT|CAR|REG - default RPT]
-createPkgWithApprover input=Sample.000000.00000.TA.124_Payload.signed.xml
-
-//usage: signAndCreatePkg [input=<xml>] [fatcaEntCommCd=NTF|RPT|CAR|REG - default RPT]
-sigXmlTransform=Inclusive 
-signAndCreatePkg input=Sample.000000.00000.TA.124_Payload.xml fatcaEntCommCd=RPT
-
-//usage: signAndCreatePkgStreaming [input=<xml>] [fatcaEntCommCd=NTF|RPT|CAR|REG - default RPT]
-sigXmlTransform=Inclusive 
-signAndCreatePkgStreaming input=Sample.000000.00000.TA.124_Payload.xml
-
-//usage: signAndCreatePkgWithApprover [input=<xml>] [fatcaEntCommCd=NTF|RPT|CAR|REG - default RPT]
-sigXmlTransform=Inclusive
-signAndCreatePkgWithApprover input=Sample.000000.00000.TA.124_Payload.xml
-
-//usage: signAndCreatePkgWithApproverStreaming [input=<xml>] [fatcaEntCommCd=NTF|RPT|CAR|REG - default RPT]
-sigXmlTransform=Inclusive
-signAndCreatePkgWithApproverStreaming input=Sample.000000.00000.TA.124_Payload.xml
-
-//usage: signBinaryAndCreatePkg [input=<binary>] [fileFormat=PDF|RTF|JPG] [fatcaEntCommCd=NTF|RPT|CAR|REG - default RPT]
-signBinaryAndCreatePkg input=Sample.pdf fileFormat=PDF
-
-//usage: signBinaryAndCreatePkgStreaming [input=<binary>] [fileFormat=PDF|RTF|JPG] [fatcaEntCommCd=NTF|RPT|CAR|REG - default RPT]
-signBinaryAndCreatePkgStreaming input=Sample.pdf fileFormat=PDF
-
-//usage: signTextAndCreatePkg [input=<txt>] [fatcaEntCommCd=NTF|RPT|CAR|REG - default RPT]
-signTextAndCreatePkg input=Sample.txt 
-
-//usage: signTextAndCreatePkgStreaming [input=<txt>] [fatcaEntCommCd=NTF|RPT|CAR|REG - default RPT]
-signTextAndCreatePkgStreaming input=Sample.txt
-
-//usage: unpack [input=<ides package>]
-unpack input=Sample_000000.00000.TA.124.zip
-
-//usage: unpackForApprover [input=<ides package built with approver>]
-unpackForApprover input=Sample_000000.00000.TA.124.zip
-
-//stop jvm
 stop

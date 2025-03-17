@@ -96,6 +96,7 @@ public class FATCADataPrepTool {
 	}
 	
 	protected void readConfigAndExceuteCommands(String conf) throws Exception {
+		System.out.println("BEGIN");
 		String senderPrivateKSType, senderPublicKSType, receiverPrivateKSType, receiverPublicKSType, 
 		approverPrivateKSType, approverPublicKSType, senderPrivateKSPwd, senderPublicKSPwd, 
 		receiverPrivateKSPwd, receiverPublicKSPwd, approverPrivateKSPwd, approverPublicKSPwd,
@@ -289,8 +290,10 @@ public class FATCADataPrepTool {
 				logger.info("all signature verification=" + signatureVerifier.getVerificationFlag());
 		} catch(Exception e) {
 			e.printStackTrace();
+			System.out.println("EXCEPTION KHALIL");
 			throw e;
 		}
+		System.out.println("END");
 	}
 	
 	protected void processCmds(ArrayList<Cmd> listCmds) throws Exception {

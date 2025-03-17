@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ftc:FATCA_OECD version="2.0" xsi:schemaLocation="urn:oecd:ties:fatca:v2 FatcaXML_v2.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sfa="urn:oecd:ties:stffatcatypes:v2" xmlns:stf="urn:oecd:ties:stf:v4" xmlns:ftc="urn:oecd:ties:fatca:v2" xmlns:iso="urn:oecd:ties:isofatcatypes:v1">
+	<ftc:MessageSpec>
+		<sfa:SendingCompanyIN>ZAYJZP.00186.ME.504</sfa:SendingCompanyIN>
+		<sfa:TransmittingCountry>MA</sfa:TransmittingCountry>
+		<sfa:ReceivingCountry>US</sfa:ReceivingCountry>
+		<sfa:MessageType>FATCA</sfa:MessageType>
+		<sfa:MessageRefId>ZAYJZP.00186.ME.504-20240308T162437</sfa:MessageRefId>
+		<sfa:ReportingPeriod>2023-12-31</sfa:ReportingPeriod>
+		<sfa:Timestamp>2024-03-08T16:24:37</sfa:Timestamp>
+	</ftc:MessageSpec>
+	<ftc:FATCA>
+		<ftc:ReportingFI>
+			<sfa:ResCountryCode>MA</sfa:ResCountryCode>
+			<sfa:TIN>ZAYJZP.00186.ME.504</sfa:TIN>
+			<sfa:Name>Allianz Maroc</sfa:Name>
+			<sfa:Address>
+				<sfa:CountryCode>MA</sfa:CountryCode>
+				<sfa:AddressFix>
+					<sfa:Street>Boulevard Mohammed Zerktouni</sfa:Street>
+					<sfa:BuildingIdentifier>166 168</sfa:BuildingIdentifier>
+					<sfa:DistrictName>CASA ANFA</sfa:DistrictName>
+					<sfa:PostCode>20060</sfa:PostCode>
+					<sfa:City>CASABLANCA</sfa:City>
+				</sfa:AddressFix>
+			</sfa:Address>
+			<ftc:FilerCategory>FATCA601</ftc:FilerCategory>
+			<ftc:DocSpec>
+				<ftc:DocTypeIndic>FATCA1</ftc:DocTypeIndic>
+				<ftc:DocRefId>ZAYJZP.00186.ME.504.POOL-20240308T162437001818</ftc:DocRefId>
+			</ftc:DocSpec>
+		</ftc:ReportingFI>
+		<ftc:ReportingGroup>
+			<ftc:AccountReport>
+				<ftc:DocSpec>
+					<ftc:DocTypeIndic>FATCA1</ftc:DocTypeIndic>
+					<ftc:DocRefId>ZAYJZP.00186.ME.504.AR-634000002-20240308T162437</ftc:DocRefId>
+				</ftc:DocSpec>
+				<ftc:Accountnumber>ADI-003477</ftc:Accountnumber>
+				<ftc:AccountHolder>
+					<ftc:Individual>
+						<sfa:PersonParty_Type>
+							<sfa:ResCountryCode> MA </sfa:ResCountryCode>
+							<sfa:TIN> 594-31-5931</sfa:TIN>
+							<sfa:Name> 
+								<sfa:FirstName> LINA </sfa:FirstName>
+								<sfa:LastName> Tazi </sfa:LastName>
+							</sfa:Name> 
+						</sfa:PersonParty_Type>
+					</ftc:Individual>
+				</ftc:AccountHolder>
+				<ftc:AccountBalance currCode="MAD">177965.90</ftc:AccountBalance>
+				<ftc:payment>
+					<ftc:type>FATCA504</ftc:type>
+					<ftc:PaymentAmmt currCode="MAD">0.00</ftc:PaymentAmmt>
+				</ftc:payment>
+				<ftc:AdditionalData>
+				</ftc:AdditionalData>
+			</ftc:AccountReport>
+			<ftc:AccountReport>
+				<ftc:DocSpec>
+					<ftc:DocTypeIndic>FATCA1</ftc:DocTypeIndic>
+					<ftc:DocRefId>ZAYJZP.00186.ME.504.AR-634000002-20240308T162437</ftc:DocRefId>
+				</ftc:DocSpec>
+				<ftc:Accountnumber>REG-001306 </ftc:Accountnumber>
+				<ftc:AccountHolder>
+					<ftc:Individual>
+						<sfa:PersonParty_Type>
+							<sfa:ResCountryCode> MA </sfa:ResCountryCode>
+							<sfa:TIN> 437-35-7924</sfa:TIN>
+							<sfa:Name> 
+								<sfa:FirstName> JULIANNE </sfa:FirstName>
+								<sfa:LastName> FURMAN </sfa:LastName>
+							</sfa:Name> 
+						</sfa:PersonParty_Type>
+					</ftc:Individual>
+				</ftc:AccountHolder>
+				<ftc:AccountBalance currCode="MAD">338946.21</ftc:AccountBalance>
+				<ftc:payment>
+					<ftc:type>FATCA504</ftc:type>
+					<ftc:PaymentAmmt currCode="MAD">0.00</ftc:PaymentAmmt>
+				</ftc:payment>
+				<ftc:AdditionalData>
+				</ftc:AdditionalData>
+			</ftc:AccountReport>			
+			<ftc:PoolReport>
+				<ftc:DocSpec>
+					<ftc:DocTypeIndic>FATCA1</ftc:DocTypeIndic>
+					<ftc:DocRefId>ZAYJZP.00186.ME.504.AR-634000002-20240308T162437</ftc:DocRefId>
+				</ftc:DocSpec>
+				<ftc:AccountCount>2</ftc:AccountCount>
+				<ftc:AccountPoolReportType>FATCA201</ftc:AccountPoolReportType>
+				<ftc:PoolBalance currCode="MAD">516912.11</ftc:PoolBalance>
+			</ftc:PoolReport>
+		</ftc:ReportingGroup>
+	</ftc:FATCA>
+</ftc:FATCA_OECD>
